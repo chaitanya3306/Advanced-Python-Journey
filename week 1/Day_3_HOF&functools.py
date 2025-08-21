@@ -91,3 +91,42 @@ print(cube(2))    # 8
 6. functools.partial → fixes some arguments of a function for reusability.
 7. HOFs make your code **clean, reusable, and memory-efficient**.
 """
+
+''' Exercise 1 (Intermediate — Combining HOF + map/filter/reduce)
+Write a function process_numbers(numbers, operation) that:
+
+Accepts a list of numbers.
+
+Accepts a string operation which can be "square", "cube", "double".
+
+Uses map to apply the correct operation.
+
+Returns a list of results.
+
+Bonus: Filter out any numbers greater than 50 using filter.
+
+
+
+
+Exercise 2 (Advanced — Real-world caching with lru_cache)
+
+Create a recursive function factorial(n) to compute factorial.
+
+Decorate it with functools.lru_cache.
+
+Test it on factorial(1000) multiple times.
+
+Measure time with time module to see caching speedup.
+
+Extra: Write a function to compute factorial for a list of numbers efficiently using caching.
+
+
+
+
+Exercise 3 (Challenging — partial + HOF combination)
+
+Write a generic logging decorator log(func) that logs function name and arguments.
+
+Use functools.partial to create pre-configured loggers for different levels (INFO, DEBUG, ERROR).
+
+Test it on simple arithmetic functions like add(a,b) or multiply(a,b).'''

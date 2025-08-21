@@ -1,0 +1,130 @@
+# ------------------------------------------------------
+# 📘 Day 4: Iterators & Generators in Python
+# ------------------------------------------------------
+# This file contains both NOTES + CODE EXAMPLES.
+# You can read, run, and modify the code to practice.
+# ------------------------------------------------------
+
+"""
+🔹 Iterators
+An iterator is an object that implements two methods:
+1. __iter__() → returns the iterator object itself
+2. __next__() → returns the next value from the sequence
+   and raises StopIteration when no items are left.
+"""
+
+# Example 1: Using iter() and next()
+numbers = [1, 2, 3]
+iterator = iter(numbers)  # Create an iterator
+
+print(next(iterator))  # 1
+print(next(iterator))  # 2
+print(next(iterator))  # 3
+# print(next(iterator))  # Uncomment → StopIteration error
+
+
+"""
+🔹 Creating Custom Iterators
+We can build our own iterator class using __iter__ and __next__.
+"""
+
+class CountDown:
+    def __init__(self, start):
+        self.current = start
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.current <= 0:
+            raise StopIteration
+        value = self.current
+        self.current -= 1
+        return value
+
+# Example 2: Using custom iterator
+cd = CountDown(5)
+for num in cd:
+    print(num)  # 5 → 4 → 3 → 2 → 1
+
+
+"""
+🔹 Generators
+Generators are a simpler way to create iterators.
+- Defined using functions with `yield` instead of `return`.
+- They generate values one by one and save memory.
+"""
+
+# Example 3: Simple generator
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
+
+gen = my_generator()
+print(next(gen))  # 1
+print(next(gen))  # 2
+print(next(gen))  # 3
+# print(next(gen))  # Uncomment → StopIteration
+
+
+# Example 4: Generator with loop
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for num in countdown(5):
+    print(num)  # 5 → 4 → 3 → 2 → 1
+
+
+"""
+🔹 Generator Expressions
+Like list comprehensions, but with () instead of [].
+They don’t create the whole list in memory.
+"""
+
+squares = (x*x for x in range(5))
+print(list(squares))  # [0, 1, 4, 9, 16]
+
+
+"""
+🔹 Real-world Example: Reading large files with Generators
+Instead of loading the full file into memory, we read line by line.
+"""
+
+def read_large_file(file_path):
+    with open(file_path, "r") as f:
+        for line in f:
+            yield line.strip()
+
+# Example usage (won’t run here without file):
+# for line in read_large_file("data.txt"):
+#     print(line)
+
+
+# ------------------------------------------------------
+# ✅ PRACTICE EXERCISES
+# ------------------------------------------------------
+
+# 1. Create a custom iterator FibonacciIterator that generates
+#    Fibonacci numbers up to N terms.
+
+# 2. Write a generator function infinite_even_numbers()
+#    that yields even numbers forever.
+
+# 3. Use a generator expression to generate cubes of numbers from 1–10.
+
+# ------------------------------------------------------
+# 🎯 UPGRADED REAL-WORLD EXERCISES
+# ------------------------------------------------------
+
+# 1. Build a generator log_reader(file_path) that yields
+#    only lines containing "ERROR" from a log file.
+
+# 2. Create a generator paginate(items, page_size) that yields
+#    items page by page (like pagination in web apps).
+
+# ------------------------------------------------------
+# 📝 SOLUTIONS (Hidden for practice → see solutions file later)
+# ------------------------------------------------------

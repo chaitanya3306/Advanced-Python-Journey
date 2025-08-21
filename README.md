@@ -1,4 +1,3 @@
-# Python Advanced Roadmap
 # 🚀 Advanced Python Roadmap
 
 Welcome to my **Advanced Python Roadmap**!  

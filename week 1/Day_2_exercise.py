@@ -10,6 +10,9 @@
 # print(multiplyall(1,2,3,4,5))
 
 
+
+# sentence maker
+
 def makesentence(**kwargs):
     words=kwargs.values()
     return ' '.join(words)

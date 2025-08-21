@@ -26,36 +26,6 @@ Each day of this roadmap includes:
 
 ---
 
-## 🗂 Repository Structure
-
-```text
-Python-Advanced-Roadmap/
-├── Day_01/
-│   ├── notes.py          # Decorators
-│   ├── exercises.py
-├── Day_02/
-│   ├── notes.py          # Function arguments (*args, **kwargs)
-│   ├── exercises.py
-├── Day_03/
-│   ├── notes.py          # Higher-order functions & functools
-│   ├── exercises.py
-├── Week_01_Mini_Project/
-│   ├── project.py
-│   ├── README.md
-└── README.md             # This file
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # 📌 Advanced Python Learning Roadmap (Step-by-Step)
 

@@ -1,13 +1,13 @@
-# def multiplyall(*args):
-#     print(args)
-#     ans=1
-#     for i in range(len(args)):
-#         print(f"{args[i]} *"," ")
-#         ans*=args[i]
+def multiplyall(*args):
+    print(args)
+    ans=1
+    for i in range(len(args)):
+        print(f"{args[i]} *"," ")
+        ans*=args[i]
         
-#     return ans
+    return ans
 
-# print(multiplyall(1,2,3,4,5))
+print(multiplyall(1,2,3,4,5))
 
 
 

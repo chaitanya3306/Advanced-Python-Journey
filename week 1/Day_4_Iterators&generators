@@ -125,6 +125,3 @@ def read_large_file(file_path):
 # 2. Create a generator paginate(items, page_size) that yields
 #    items page by page (like pagination in web apps).
 
-# ------------------------------------------------------
-# 📝 SOLUTIONS (Hidden for practice → see solutions file later)
-# ------------------------------------------------------

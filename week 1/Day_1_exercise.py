@@ -1,19 +1,20 @@
-# def uppercase(func):
-#     def wrapper(*args, **kwargs):
-#         print(f"Making it Uppercase ({func(*args, **kwargs)})")
-#         result=func(*args, **kwargs)
-#         print("Uppercased!!")
-#         return result.upper()
+
+def uppercase(func):
+    def wrapper(*args, **kwargs):
+        print(f"Making it Uppercase ({func(*args, **kwargs)})")
+        result=func(*args, **kwargs)
+        print("Uppercased!!")
+        return result.upper()
     
-#     return wrapper
+    return wrapper
 
-# @uppercase
-# def greet(name):
-#     return f'hello {name} !!'
+@uppercase
+def greet(name):
+    return f'hello {name} !!'
 
-# name='Chaitanya'
+name='Chaitanya'
 
-# print(greet(name))
+print(greet(name))
 
 import random
 def retry(n):
